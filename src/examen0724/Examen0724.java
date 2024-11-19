@@ -6,6 +6,7 @@ import clases.Cliente;
 import clases.Sistema;
 import clases.Tecnico;
 import interfaces.ConsultaDeCostos;
+import interfaces.OtraVentana;
 import java.util.ArrayList;
 
 
@@ -61,6 +62,7 @@ public class Examen0724 {
         carteles.add(cartel10);
         Sistema modelo = new Sistema(clientes,tecnicos,carteles);
         ConsultaDeCostos ventana = new ConsultaDeCostos(modelo);
+        OtraVentana otraVent = new OtraVentana();
         
 
         //System.out.println(modelo.getListaCarteles().toString());
