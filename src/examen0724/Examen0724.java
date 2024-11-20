@@ -62,6 +62,7 @@ public class Examen0724 {
         carteles.add(cartel10);
         Sistema modelo = new Sistema(clientes,tecnicos,carteles);
         ConsultaDeCostos ventana = new ConsultaDeCostos(modelo);
+        // otra ventana  es ventana de prueba
         OtraVentana otraVent = new OtraVentana();
         
 
