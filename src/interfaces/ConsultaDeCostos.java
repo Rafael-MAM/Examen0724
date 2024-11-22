@@ -30,8 +30,8 @@ public class ConsultaDeCostos extends javax.swing.JFrame {
         jTFMontoMaximo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jLCarteles = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
+        jListCarteles = new javax.swing.JList<>();
+        jLabCarteles = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListEjemplo = new javax.swing.JList<>();
 
@@ -71,14 +71,14 @@ public class ConsultaDeCostos extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(170, 180, 100, 30);
 
-        jScrollPane1.setViewportView(jLCarteles);
+        jScrollPane1.setViewportView(jListCarteles);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(310, 70, 180, 140);
 
-        jLabel1.setText("Carteles");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(330, 30, 80, 30);
+        jLabCarteles.setText("Carteles");
+        getContentPane().add(jLabCarteles);
+        jLabCarteles.setBounds(330, 30, 80, 30);
 
         jScrollPane2.setViewportView(jListEjemplo);
 
@@ -97,7 +97,7 @@ public class ConsultaDeCostos extends javax.swing.JFrame {
         int max = Integer.parseInt(jTFMontoMaximo.getText());
         ArrayList<Cartel> aux = this.modelo.cartelMontoFranja(min, max, this.modelo.getListaCarteles());
         this.modelo.cartelOrdenado(aux);
-        jLCarteles.setListData(aux.toArray());
+        jListCarteles.setListData(aux.toArray());
         
         // Ejemplo
         jListEjemplo.setListData(aux.toArray());
@@ -111,10 +111,10 @@ public class ConsultaDeCostos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JList<Object> jLCarteles;
+    private javax.swing.JLabel jLabCarteles;
     private javax.swing.JLabel jLabMontoMax;
     private javax.swing.JLabel jLabMontoMin;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<Object> jListCarteles;
     private javax.swing.JList<Object> jListEjemplo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
