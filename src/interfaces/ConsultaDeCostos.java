@@ -1,10 +1,12 @@
 
 package interfaces;
 
+//import java.io.*;
 import clases.Cartel;
 import clases.Sistema;
 import java.util.ArrayList;
-
+import javax.swing.JOptionPane; // tengo que importar el JOptionPane porque se coloca a mano y no desde el Deign
+                                
 public class ConsultaDeCostos extends javax.swing.JFrame {
 
     private Sistema modelo;
@@ -93,14 +95,20 @@ public class ConsultaDeCostos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFMontoMaximoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int min = Integer.parseInt(jTFmontoMinimo.getText());
-        int max = Integer.parseInt(jTFMontoMaximo.getText());
-        ArrayList<Cartel> aux = this.modelo.cartelMontoFranja(min, max, this.modelo.getListaCarteles());
-        this.modelo.cartelOrdenado(aux);
-        jListCarteles.setListData(aux.toArray());
         
-        // Ejemplo
-        jListEjemplo.setListData(aux.toArray());
+        try {
+            int min = Integer.parseInt(jTFmontoMinimo.getText());
+            int max = Integer.parseInt(jTFMontoMaximo.getText());
+            ArrayList<Cartel> aux = this.modelo.cartelMontoFranja(min, max, this.modelo.getListaCarteles());
+            this.modelo.cartelOrdenado(aux);
+            jListCarteles.setListData(aux.toArray());
+            // Ejemplo
+            jListEjemplo.setListData(aux.toArray());
+        }
+        catch (NumberFormatException e) {
+             // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this,"ingresa valor correcto","Error",JOptionPane.ERROR_MESSAGE);
+        }  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTFmontoMinimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFmontoMinimoActionPerformed
