@@ -1,4 +1,3 @@
-
 package examen0724;
 
 import clases.Cartel;
@@ -6,12 +5,9 @@ import clases.Cliente;
 import clases.Sistema;
 import clases.Tecnico;
 import interfaces.ConsultaDeCostos;
-import interfaces.OtraVentana;
 import java.util.ArrayList;
 
-
 public class Examen0724 {
-
 
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente("Jorge","099111111","2111111");
@@ -62,10 +58,7 @@ public class Examen0724 {
         carteles.add(cartel10);
         Sistema modelo = new Sistema(clientes,tecnicos,carteles);
         ConsultaDeCostos ventana = new ConsultaDeCostos(modelo);
-        // otra ventana  es ventana de prueba
-        OtraVentana otraVent = new OtraVentana();
         
-
         //System.out.println(modelo.getListaCarteles().toString());
         //modelo.cartelOrdenado(carteles);
         //System.out.println(modelo.getListaCarteles().toString());
